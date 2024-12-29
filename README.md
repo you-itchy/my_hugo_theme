@@ -11,3 +11,5 @@ hugo new site .
 This generates a new hugo site with four directories: `archetypes`, `content`, `data`, `layouts`, `static`, and `themes`.
 
 ### Step 2
+
+Test
