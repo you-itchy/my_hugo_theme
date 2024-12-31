@@ -1,0 +1,17 @@
+@layer components {
+  .pagination {
+    @apply flex gap-3 list-none p-0 m-0 text-sm mt-20 mb-8;
+  }
+
+  .page-item {
+    @apply border border-gray-400 w-8 h-8 flex items-center justify-center rounded;
+  }
+
+  .page-item.active {
+    @apply bg-gray-300 text-black;
+  }
+
+  .page-item.disabled {
+    @apply bg-gray-700 cursor-not-allowed;
+  }
+}

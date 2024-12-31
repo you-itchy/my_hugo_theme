@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  {{ partial "head" . }}
+  <body
+    class="bg-white dark:bg-gray-800 text-gray-800 dark:text-white transition-colors duration-300"
+  >
+    <div class="flex-grow mx-auto max-w-4xl">
+      {{ partial "navbar" . }}
+      <main class="py-8 px-4">
+        {{ block "main" . }} 
+        {{ end }}
+      </main>
+      {{ partial "footer" . }}
+    </div>
+  </body>
+</html>
