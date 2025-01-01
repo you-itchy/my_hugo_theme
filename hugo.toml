@@ -1,13 +1,13 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My French diary'
+title = 'Franotes'
 
 ignoreLogs = ['warning-goldmark-raw-html']
 
-pagination.pagerSize = 2
+pagination.pagerSize = 10
 
 [params]
-description = "My blog about learning French"
+description = "Simply learning French and taking notes"
 dateFormat = "Jan 2, 2006"
 
 [taxonomies]
