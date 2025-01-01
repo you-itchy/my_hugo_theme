@@ -7,26 +7,18 @@
       <div class="flex items-center gap-4 text-sm text-gray-500">
         <span>
           {{ range (.GetTerms "authors")}}
-          <a href="{{.Permalink}}" class="hover:underline">{{ .Name }}</a>
+            <a href="{{.Permalink}}" class="hover:underline">{{ .Name }}</a>
           {{end}}
         </span>
         {{ range (.GetTerms "tags")}}
-        <a
-          href="{{.Permalink}}"
-          class="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition-colors"
-          >{{ .Name }}</a
-        >
+          <a
+            href="{{.Permalink}}"
+            class="px-3 py-1 bg-purple-800 text-gray-200 rounded hover:bg-purple-300 transition-colors"
+          >{{ .Name }}</a>
         {{end}}
       </div>
-      <time class="text-sm text-gray-500"
-        >{{ dateFormat .Site.Params.dateFormat .Date }}</time
-      >
+      <time class="text-sm text-gray-500">{{ dateFormat .Site.Params.dateFormat .Date }}</time>
     </div>
-    <img
-      src="{{ .Params.imageBig }}"
-      alt="{{.Title}}"
-      class="md:w-1/3 h-64 object-cover rounded-lg"
-    />
   </div>
   <div class="prose max-w-none markdown">{{ .Content }}</div>
 </div>

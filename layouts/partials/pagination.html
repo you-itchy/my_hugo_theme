@@ -1,0 +1,22 @@
+{{- $pages := union .RegularPages .Sections }}
+{{- $paginator := .Paginate $pages }}
+
+{{- if gt $paginator.TotalPages 1 }}
+  <footer class="">
+    <nav class="flex justify-between">
+      {{- if $paginator.HasPrev }}
+        <a class="inline-block mr-2 my-2 p-2 bg-gray-900 rounded" href="{{ $paginator.Prev.URL | absURL }}">
+          «&nbsp;{{ i18n "prev_page" }}&nbsp;
+          {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
+        </a>
+      {{- end }}
+
+      {{- if $paginator.HasNext }}
+        <a class="inline-block {{ if $paginator.HasPrev }}ml-2{{else}}ml-0{{ end }} my-2 p-2 bg-gray-900 rounded" href="{{ $paginator.Next.URL | absURL }}">
+          {{- i18n "next_page" }}&nbsp;
+          {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}&nbsp;»
+        </a>
+      {{- end }}
+    </nav>
+  </footer>
+{{- end }}

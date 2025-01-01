@@ -1,11 +1,13 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'My French diary'
 
-pagination.pagerSize = 10
+ignoreLogs = ['warning-goldmark-raw-html']
+
+pagination.pagerSize = 2
 
 [params]
-description = "The fastest blog"
+description = "My blog about learning French"
 dateFormat = "Jan 2, 2006"
 
 [taxonomies]
@@ -16,3 +18,4 @@ author = "authors"
   [[build.cachebusters]]
     source = 'layouts/.*'
     target = 'css'
+

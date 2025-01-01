@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="max-w-4xl mx-auto px-4">
+  <div class="flex flex-col md:flex-row gap-8 mb-12">
+    <div class="md:w-2/3 space-y-6">
+      <h1 class="text-4xl font-bold">{{.Title}}</h1>
+      <time class="text-sm text-gray-500"
+        >{{ dateFormat .Site.Params.dateFormat .Date }}</time
+      >
+    </div>
+  </div>
+  <div class="prose max-w-none markdown">{{ .Content }}</div>
+</div>
+{{ end }}

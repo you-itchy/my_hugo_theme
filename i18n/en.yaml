@@ -1,0 +1,17 @@
+- id: prev_page
+  translation: "Prev"
+
+- id: next_page
+  translation: "Next"
+
+- id: page_not_found
+  translation: "Page not found"
+
+- id: tags
+  translation: "Tags"
+
+- id: about
+  translation: "About"
+
+- id: sitemap
+  translation: "Sitemap"
