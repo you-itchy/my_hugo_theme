@@ -1,25 +1,103 @@
-<div class="space-y-12 px-2 sm:px-6">
+<style>
+  .list__container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; 
+
+    @media (min-width: 640px) { 
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; 
+    }
+  }
+
+  .list__inner_container {
+    display: flex; 
+    gap: 3rem; 
+    align-items: flex-start; 
+  }
+
+  .list__meta_container {
+    margin-top: 1rem; 
+  }
+
+  .list__title {
+    font-size: 1.5rem;
+    line-height: 2rem; 
+    font-weight: 700; 
+  }
+
+  .list__title_link {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms; 
+  }
+  .list__title_link:hover {
+    color: #4B5563; 
+  }
+
+  .list__desc {
+    color: #9CA3AF; 
+  }
+
+  .list__author {
+    display: flex; 
+    gap: 1rem; 
+    align-items: center; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    color: #9CA3AF; 
+  }
+
+  .list__author_link:hover {
+    text-decoration: underline; 
+  }
+
+  .list__tags {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+  }
+
+  .list__tags_link {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem; 
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; 
+    border-radius: 0.25rem; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    color: #E5E7EB; 
+    background-color: #5B21B6; 
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms; 
+  }
+  .list__tags_link:hover {
+    background-color: #C4B5FD; 
+  }
+</style>
+
+<div class="list__container">
   {{ $pages := where .Site.RegularPages "Section" "posts" }}
   {{ $paginator := .Paginate $pages }}
   {{ range .Paginator.Pages }}
-  <div class="flex gap-12 items-start">
-    <div class="flex-2 space-y-4">
-      <h1 class="text-2xl font-bold">
-        <a href="{{.Permalink}}" class="hover:text-gray-600 transition-colors">{{.Title}}</a>
+  <div class="list__inner_container">
+    <div class="list__meta_container">
+      <h1 class="list__title">
+        <a href="{{.Permalink}}" class="list__title_link">{{.Title}}</a>
       </h1>
-      <p class="text-gray-400">{{.Params.description}}</p>
-      <div class="flex items-center gap-4 text-sm text-gray-400">
+      <p class="list__desc">{{.Params.description}}</p>
+      <div class="list__author">
         <span>
           {{ range (.GetTerms "authors")}}
-            <a href="{{.Permalink}}" class="hover:underline">{{ .Name }}</a>
+            <a href="{{.Permalink}}" class="list__author_link">{{ .Name }}</a>
           {{end}}
         </span>
         <time>{{ dateFormat .Site.Params.dateFormat .Date}}</time>
       </div>
-      <div class="flex flex-wrap gap-2">
+      <div class="list__tags">
         {{ range (.GetTerms "tags") }}
           <a
-            class="px-2 py-1 bg-purple-800 text-gray-200 text-sm rounded hover:bg-purple-300 transition-colors"
+            class="list__tags_link"
             href="{{ .Permalink }}"
           >{{ .Name }}</a>
         {{ end }}

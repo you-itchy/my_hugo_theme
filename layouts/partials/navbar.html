@@ -1,18 +1,67 @@
-<nav
-  class="sticky top-0 bg-gray-900 text-white flex items-center justify-between h-16 px-6 sm:px-10 transition-colors duration-300"
->
-  <div class="text-2xl font-bold text-purple-600 hover:text-purple-700">
+<style>
+  .navbar {
+    display: flex; 
+    position: sticky; 
+    top: 0; 
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 4rem; 
+    color: #ffffff; 
+    background-color: #111827; 
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms; 
+    transition-duration: 300ms; 
+    
+    @media (min-width: 640px) { 
+      padding-left: 2.5rem;
+      padding-right: 2.5rem; 
+    }
+  }
+
+  .navbar__title {
+    font-size: 1.5rem;
+    line-height: 2rem; 
+    font-weight: 700; 
+    color: #7C3AED !important; 
+  }
+  .navbar__title:hover {
+    color: #6D28D9 !important; 
+  }
+
+  .navbar__items {
+    display: flex; 
+    gap: 1.25rem; 
+    align-items: center; 
+    font-size: 1.25rem;
+    line-height: 1.75rem; 
+  }
+
+  .navbar__item {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms; 
+  }
+  .navbar__item:hover {
+    color: #6D28D9 !important; 
+  }
+</style>
+
+<nav class="navbar">
+  <div class="navbar__title">
     <a href="/">{{ .Site.Title }}</a>
   </div>
 
-  <div class="flex items-center gap-5 text-xl">
+  <div class="navbar__items">
     <a
       href="/tags"
-      class="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+      class="navbar__item"
     >{{- i18n "tags" }}</a>
     <a
       href="/about"
-      class="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+      class="navbar__item"
     >{{- i18n "about" }}</a>
   </div>
 </nav>
