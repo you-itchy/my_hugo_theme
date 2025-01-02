@@ -32,7 +32,7 @@
     <div class="tags__container">
       {{ range $.Site.Taxonomies.tags.ByCount }}
       <a
-        href="/tags/{{ .Name }}"
+        href="{{ relURL "tags" }}/{{ .Name }}"
         class="tags__link"
       >
         {{ .Name }} <small class="tags__count">({{.Count}})</small>

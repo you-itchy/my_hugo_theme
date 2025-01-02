@@ -51,16 +51,16 @@
 
 <footer class="footer__container">
   <div class="footer__inner_container_1">
-    <a href="/" class="footer__site_title">{{ .Site.Title }}</a>
+    <a href="{{ relURL ""}}" class="footer__site_title">{{ .Site.Title }}</a>
     <span>|</span>
-    <a href="/tags" class="footer__item">{{- i18n "tags" }}</a>
+    <a href="{{ relURL "tags" }}" class="footer__item">{{- i18n "tags" }}</a>
     <span>|</span>
-    <a href="/sitemap.xml" class="footer__item">{{- i18n "sitemap" }}</a>
+    <a href="{{ relURL "sitemap.xml" }}" class="footer__item">{{- i18n "sitemap" }}</a>
   </div>
 
   <div class="footer__inner_container_2">
     <a
-      href="https://github.com/you-itchy"
+      href="https://github.com/you-itchy/franotes"
       class="footer__item_icon_link"
     >
       <!-- https://iconmonstr.com/github-1-svg/ -->

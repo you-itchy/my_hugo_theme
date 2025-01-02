@@ -51,16 +51,16 @@
 
 <nav class="navbar">
   <div class="navbar__title">
-    <a href="/">{{ .Site.Title }}</a>
+    <a href="{{ relURL "" }}">{{ .Site.Title }}</a>
   </div>
 
   <div class="navbar__items">
     <a
-      href="/tags"
+      href="{{ relURL "tags" }}"
       class="navbar__item"
     >{{- i18n "tags" }}</a>
     <a
-      href="/about"
+      href="{{ relURL "about" }}"
       class="navbar__item"
     >{{- i18n "about" }}</a>
   </div>
